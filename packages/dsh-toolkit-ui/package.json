@@ -35,8 +35,9 @@
     "dev": "tsdown --config ./tsdown.config.ts --watch",
     "build": "tsdown --config ./tsdown.config.ts && node scripts/verify-build.mjs",
     "typecheck": "tsc --noEmit",
-    "test": "node tests/smoke.mjs",
-    "verify:hmr": "node scripts/verify-hmr.mjs"
+    "test": "vitest run && node tests/smoke.mjs",
+    "verify:hmr": "node scripts/verify-hmr.mjs",
+    "test:unit": "vitest run"
   },
   "peerDependencies": {
     "react": "^18.2.0",

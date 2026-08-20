@@ -6,6 +6,10 @@
     "typecheck": "pnpm -r --no-bail typecheck",
     "build": "pnpm -r build",
     "test": "pnpm -r --no-bail test",
-    "check": "pnpm run typecheck && pnpm run build && pnpm run test"
+    "check": "pnpm run typecheck && pnpm run build && pnpm run test && pnpm run integrity",
+    "integrity": "node scripts/bundle-integrity.mjs"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.0"
   }
 }
