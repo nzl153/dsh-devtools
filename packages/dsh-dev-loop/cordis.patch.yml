@@ -1,0 +1,4 @@
+# dsh-dev-loop bundle：向组合挂 Node half（host 命令执行 + API）。
+- insert:
+    - id: dsh-dev-loop
+      name: dsh-dev-loop

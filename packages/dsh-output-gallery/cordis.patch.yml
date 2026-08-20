@@ -1,0 +1,4 @@
+# dsh-output-gallery bundle：向组合挂 Node half（host 扫描 + API）。
+- insert:
+    - id: dsh-output-gallery
+      name: dsh-output-gallery

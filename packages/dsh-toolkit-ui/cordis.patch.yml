@@ -1,0 +1,4 @@
+# dsh-toolkit-ui bundle：client shell + shared presentation layer。
+- insert:
+    - id: dsh-toolkit-ui
+      name: dsh-toolkit-ui

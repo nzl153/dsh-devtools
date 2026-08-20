@@ -1,0 +1,26 @@
+# 放到项目根目录：.dsh/devloop.yml
+name: my-app
+actions:
+  install:
+    command: npm install
+  build:
+    command: npm run build
+    dependsOn: [install]
+  test:
+    command: npm test
+    dependsOn: [install]
+  run:
+    command: node .
+  logs:
+    file: logs/app.log
+
+# Watch Mode（默认关闭）
+# watch:
+#   paths:
+#     - src
+#   debounce: 500
+#   action: build
+
+# After Agent Turn（默认关闭）
+# afterAgent:
+#   action: test

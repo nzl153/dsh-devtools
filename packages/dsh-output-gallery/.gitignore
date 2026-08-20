@@ -1,0 +1,7 @@
+node_modules/
+dist/
+*.log
+.DS_Store
+Thumbs.db
+.dsh-memory/
+# lib/ 是构建产物，但 DSH 插件通过 git 安装时不会自动构建，因此提交 lib/

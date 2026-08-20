@@ -1,0 +1,6 @@
+{
+  "triggerMode": "session-only",        // off | session-only | every-n-turns | on-completion
+  "turnInterval": 2,                    // every-n-turns 时的间隔
+  "testCommandPatterns": ["my-test-runner"], // 追加到内置 pattern，识别测试
+  "detectTodoMarkers": true
+}

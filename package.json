@@ -1,0 +1,11 @@
+{
+  "name": "dsh-devtools",
+  "private": true,
+  "description": "DSH 开发者工具插件集",
+  "scripts": {
+    "typecheck": "pnpm -r --no-bail typecheck",
+    "build": "pnpm -r build",
+    "test": "pnpm -r --no-bail test",
+    "check": "pnpm run typecheck && pnpm run build && pnpm run test"
+  }
+}

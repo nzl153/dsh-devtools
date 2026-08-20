@@ -1,0 +1,4 @@
+# dsh-context-xray bundle：向组合挂 Node half（host 分析 + API）。
+- insert:
+    - id: dsh-context-xray
+      name: dsh-context-xray

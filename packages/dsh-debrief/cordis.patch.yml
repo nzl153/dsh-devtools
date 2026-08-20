@@ -1,0 +1,4 @@
+# dsh-debrief bundle：向组合挂 Node half（debrief 引擎 + API + 设置）。
+- insert:
+    - id: dsh-debrief
+      name: dsh-debrief

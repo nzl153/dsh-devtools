@@ -1,0 +1,4 @@
+# dsh-run-lab bundle：向组合挂 Node half（host 实验编排 + HTTP API）。
+- insert:
+    - id: dsh-run-lab
+      name: dsh-run-lab

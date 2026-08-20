@@ -1,0 +1,4 @@
+# dsh-session-archaeologist bundle：向组合挂 Node half（host 全文索引 + API）。
+- insert:
+    - id: dsh-session-archaeologist
+      name: dsh-session-archaeologist

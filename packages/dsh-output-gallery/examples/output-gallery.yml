@@ -1,0 +1,13 @@
+# 放到项目根目录：.dsh/output-gallery.yml
+# include / exclude 按 glob 或路径片段匹配
+
+# include:
+#   - src/**
+#   - docs/**
+
+exclude:
+  - node_modules
+  - .git
+  - dist
+  - coverage
+  - "*.tmp"

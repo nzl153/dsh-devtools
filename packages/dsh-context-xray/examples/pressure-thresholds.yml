@@ -1,0 +1,7 @@
+# Pressure thresholds (percent of context window)
+# 写入 cordis.patch.yml 或 DSH 插件配置
+dsh-context-xray:
+  pressureThresholds:
+    elevated: 50   # 达到窗口 50% → elevated
+    high: 75       # 75% → high
+    critical: 90   # 90% → critical

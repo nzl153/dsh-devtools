@@ -1,0 +1,21 @@
+{
+  "name": "dsh-developer-toolkit",
+  "version": "0.1.0",
+  "description": "DSH Developer Toolkit — overview, plugin matrix, install entry, compatibility and roadmap for the DSH developer-tool plugins.",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nzl153/dsh-developer-toolkit.git"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "deepseek",
+    "developer-tools"
+  ],
+  "engines": {
+    "node": ">=18"
+  }
+}

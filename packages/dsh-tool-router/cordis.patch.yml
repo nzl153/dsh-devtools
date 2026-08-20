@@ -1,0 +1,4 @@
+# dsh-tool-router bundle：向组合挂 Node half（每 step 工具可见集过滤）。
+- insert:
+    - id: dsh-tool-router
+      name: dsh-tool-router
