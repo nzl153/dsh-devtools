@@ -35,7 +35,7 @@ dsh-time-machine answers:
 Prerequisite: DSH CLI (`@deepseek-ai/dsh`) installed and a target profile (example: `web`).
 
 ```sh
-git clone https://github.com/nzl153/dsh-time-machine.git
+git clone https://github.com/nzl153/dsh-devtools.git
 cd dsh-time-machine
 pnpm install
 pnpm build

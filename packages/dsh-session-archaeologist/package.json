@@ -2,13 +2,14 @@
   "name": "dsh-session-archaeologist",
   "version": "1.0.0-rc.1",
   "description": "Session Archaeologist — cross-session full-text search over local DSH sessions with SQLite FTS5, scoped filters, timeline summaries, and bounded bring-to-context excerpts. 会话考古：本地 session 全文检索 / 作用域过滤 / 结构化时间线 / 受限摘要注入当前上下文。",
-  "homepage": "https://github.com/nzl153/dsh-session-archaeologist",
+  "homepage": "https://github.com/nzl153/dsh-devtools/tree/main/packages/dsh-session-archaeologist",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nzl153/dsh-session-archaeologist.git"
+    "url": "git+https://github.com/nzl153/dsh-devtools.git",
+    "directory": "packages/dsh-session-archaeologist"
   },
   "bugs": {
-    "url": "https://github.com/nzl153/dsh-session-archaeologist/issues"
+    "url": "https://github.com/nzl153/dsh-devtools/issues"
   },
   "keywords": [
     "dsh",

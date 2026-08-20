@@ -29,7 +29,7 @@ dsh-toolkit-ui solves this:
 Prerequisite: DSH CLI (`@deepseek-ai/dsh`) installed and a target profile (example: `web`).
 
 ```sh
-git clone https://github.com/nzl153/dsh-toolkit-ui.git
+git clone https://github.com/nzl153/dsh-devtools.git
 cd dsh-toolkit-ui
 pnpm install
 pnpm build

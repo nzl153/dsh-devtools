@@ -39,7 +39,7 @@ Use it for context bloat, redundant tools, and pressure warnings.
 Prerequisite: DSH CLI (`@deepseek-ai/dsh`) installed and a target profile (example: `web`).
 
 ```sh
-git clone https://github.com/nzl153/dsh-context-xray.git
+git clone https://github.com/nzl153/dsh-devtools.git
 cd dsh-context-xray
 pnpm install
 pnpm build

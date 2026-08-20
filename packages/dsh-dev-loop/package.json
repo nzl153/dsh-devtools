@@ -2,13 +2,14 @@
   "name": "dsh-dev-loop",
   "version": "0.9.0",
   "description": "DSH Dev Loop — project-level Build/Test/Run/Restart development panel for DeepSeek Harness",
-  "homepage": "https://github.com/nzl153/dsh-dev-loop",
+  "homepage": "https://github.com/nzl153/dsh-devtools/tree/main/packages/dsh-dev-loop",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nzl153/dsh-dev-loop.git"
+    "url": "git+https://github.com/nzl153/dsh-devtools.git",
+    "directory": "packages/dsh-dev-loop"
   },
   "bugs": {
-    "url": "https://github.com/nzl153/dsh-dev-loop/issues"
+    "url": "https://github.com/nzl153/dsh-devtools/issues"
   },
   "keywords": [
     "dsh",

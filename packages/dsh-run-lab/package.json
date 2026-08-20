@@ -2,13 +2,14 @@
   "name": "dsh-run-lab",
   "version": "0.8.0",
   "description": "DSH Agent experiment & A/B comparison — run the same coding task in two isolated workspaces and compare objective metrics (wall time, turns, tokens, diff, evaluator results).",
-  "homepage": "https://github.com/nzl153/dsh-run-lab",
+  "homepage": "https://github.com/nzl153/dsh-devtools/tree/main/packages/dsh-run-lab",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nzl153/dsh-run-lab.git"
+    "url": "git+https://github.com/nzl153/dsh-devtools.git",
+    "directory": "packages/dsh-run-lab"
   },
   "bugs": {
-    "url": "https://github.com/nzl153/dsh-run-lab/issues"
+    "url": "https://github.com/nzl153/dsh-devtools/issues"
   },
   "keywords": [
     "dsh",

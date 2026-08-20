@@ -2,13 +2,14 @@
   "name": "dsh-time-machine",
   "version": "1.0.0-rc.1",
   "description": "DSH Agent 文件修改时间机器：session baseline、turn 级修改记录、安全恢复与 conflict 检测",
-  "homepage": "https://github.com/nzl153/dsh-time-machine",
+  "homepage": "https://github.com/nzl153/dsh-devtools/tree/main/packages/dsh-time-machine",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nzl153/dsh-time-machine.git"
+    "url": "git+https://github.com/nzl153/dsh-devtools.git",
+    "directory": "packages/dsh-time-machine"
   },
   "bugs": {
-    "url": "https://github.com/nzl153/dsh-time-machine/issues"
+    "url": "https://github.com/nzl153/dsh-devtools/issues"
   },
   "keywords": [
     "dsh",

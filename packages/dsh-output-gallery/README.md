@@ -52,7 +52,7 @@ DSH rc.6 自带的 `@deepseek-ai/dsh-client-ui-deliverables` 做的是单 turn �
 前置条件：已安装 DSH CLI（`@deepseek-ai/dsh`），且本机已有目标 profile（示例为 `web`）。
 
 ```sh
-git clone https://github.com/nzl153/dsh-output-gallery.git
+git clone https://github.com/nzl153/dsh-devtools.git
 cd dsh-output-gallery
 pnpm install
 pnpm build

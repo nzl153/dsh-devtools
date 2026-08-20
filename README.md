@@ -2,6 +2,12 @@
 
 DSH 开发者工具插件集。11 个包共用一套构建与检查流程。
 
+> **说明**：这是一个合集仓库，按需自取。代码 MIT 开源，但**不单独提供支持** ——
+> issue 和 PR 可能不会回复。要单独维护的插件会拆成独立仓库。
+>
+> ⚠️ 除 `dsh-mode-boost` 和 `dsh-tool-router` 外，其余插件的面板都挂在
+> **`dsh-toolkit-ui`** 这个共用外壳上，**必须连它一起装**，只装单个插件不会出现界面。
+
 | 包 | 版本 | 说明 |
 |---|---|---|
 | `dsh-context-xray` | 1.0.0-rc.1 | DSH Context X-Ray / Context Inspector |

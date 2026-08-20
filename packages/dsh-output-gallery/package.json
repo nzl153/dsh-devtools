@@ -2,13 +2,14 @@
   "name": "dsh-output-gallery",
   "version": "0.9.0",
   "description": "DSH Session 产物中心 / Deliverables Gallery — session-scoped, classified artifact tracking with safe previews and version history",
-  "homepage": "https://github.com/nzl153/dsh-output-gallery",
+  "homepage": "https://github.com/nzl153/dsh-devtools/tree/main/packages/dsh-output-gallery",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nzl153/dsh-output-gallery.git"
+    "url": "git+https://github.com/nzl153/dsh-devtools.git",
+    "directory": "packages/dsh-output-gallery"
   },
   "bugs": {
-    "url": "https://github.com/nzl153/dsh-output-gallery/issues"
+    "url": "https://github.com/nzl153/dsh-devtools/issues"
   },
   "keywords": [
     "dsh",

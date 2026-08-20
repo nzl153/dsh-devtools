@@ -2,13 +2,14 @@
   "name": "dsh-debrief",
   "version": "0.9.0",
   "description": "DSH Mission Debrief — deterministic, non-LLM per-turn and per-session work summaries computed locally from the session event log",
-  "homepage": "https://github.com/nzl153/dsh-debrief",
+  "homepage": "https://github.com/nzl153/dsh-devtools/tree/main/packages/dsh-debrief",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nzl153/dsh-debrief.git"
+    "url": "git+https://github.com/nzl153/dsh-devtools.git",
+    "directory": "packages/dsh-debrief"
   },
   "bugs": {
-    "url": "https://github.com/nzl153/dsh-debrief/issues"
+    "url": "https://github.com/nzl153/dsh-devtools/issues"
   },
   "keywords": [
     "dsh",

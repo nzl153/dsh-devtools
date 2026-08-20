@@ -41,7 +41,7 @@ dsh-dev-loop solves this:
 Prerequisite: DSH CLI (`@deepseek-ai/dsh`) installed and a target profile (example: `web`).
 
 ```sh
-git clone https://github.com/nzl153/dsh-dev-loop.git
+git clone https://github.com/nzl153/dsh-devtools.git
 cd dsh-dev-loop
 pnpm install
 pnpm build

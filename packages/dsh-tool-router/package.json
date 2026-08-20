@@ -2,13 +2,14 @@
   "name": "dsh-tool-router",
   "version": "0.1.0",
   "description": "DSH Tool Router — deterministically shrink model-visible tool schemas per step with a safe fallback",
-  "homepage": "https://github.com/nzl153/dsh-tool-router",
+  "homepage": "https://github.com/nzl153/dsh-devtools/tree/main/packages/dsh-tool-router",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nzl153/dsh-tool-router.git"
+    "url": "git+https://github.com/nzl153/dsh-devtools.git",
+    "directory": "packages/dsh-tool-router"
   },
   "bugs": {
-    "url": "https://github.com/nzl153/dsh-tool-router/issues"
+    "url": "https://github.com/nzl153/dsh-devtools/issues"
   },
   "keywords": [
     "dsh",

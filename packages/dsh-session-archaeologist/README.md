@@ -38,7 +38,7 @@ dsh-session-archaeologist 解决：
 前置条件：已安装 DSH CLI（`@deepseek-ai/dsh`），且本机已有目标 profile（示例为 `web`）。
 
 ```sh
-git clone https://github.com/nzl153/dsh-session-archaeologist.git
+git clone https://github.com/nzl153/dsh-devtools.git
 cd dsh-session-archaeologist
 pnpm install
 pnpm build

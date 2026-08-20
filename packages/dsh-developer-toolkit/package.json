@@ -6,7 +6,8 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nzl153/dsh-developer-toolkit.git"
+    "url": "git+https://github.com/nzl153/dsh-devtools.git",
+    "directory": "packages/dsh-developer-toolkit"
   },
   "keywords": [
     "dsh",
@@ -17,5 +18,9 @@
   ],
   "engines": {
     "node": ">=18"
+  },
+  "homepage": "https://github.com/nzl153/dsh-devtools/tree/main/packages/dsh-developer-toolkit",
+  "bugs": {
+    "url": "https://github.com/nzl153/dsh-devtools/issues"
   }
 }

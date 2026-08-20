@@ -52,7 +52,7 @@ This plugin is complementary:
 Prerequisite: DSH CLI (`@deepseek-ai/dsh`) installed and a target profile (example: `web`).
 
 ```sh
-git clone https://github.com/nzl153/dsh-output-gallery.git
+git clone https://github.com/nzl153/dsh-devtools.git
 cd dsh-output-gallery
 pnpm install
 pnpm build

@@ -2,13 +2,14 @@
   "name": "dsh-context-xray",
   "version": "1.0.0-rc.1",
   "description": "DSH Context X-Ray / Context Inspector — answer what the model really receives and why it is large",
-  "homepage": "https://github.com/nzl153/dsh-context-xray",
+  "homepage": "https://github.com/nzl153/dsh-devtools/tree/main/packages/dsh-context-xray",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nzl153/dsh-context-xray.git"
+    "url": "git+https://github.com/nzl153/dsh-devtools.git",
+    "directory": "packages/dsh-context-xray"
   },
   "bugs": {
-    "url": "https://github.com/nzl153/dsh-context-xray/issues"
+    "url": "https://github.com/nzl153/dsh-devtools/issues"
   },
   "keywords": [
     "dsh",
