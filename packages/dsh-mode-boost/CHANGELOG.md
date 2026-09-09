@@ -14,4 +14,5 @@
 
 ### 打包
 - `files` 增加 `CHANGELOG.md`。
-- 新增 `publishConfig.access = "public"`：scoped 包首次发布默认 restricted，不显式声明会发成私有包。
+- npm 包名由 `@dsh-external/dsh-mode-boost` 改回 `dsh-mode-boost`：`@dsh-external` 不是本仓库
+  作者控制的 scope，往里面发布会 403。

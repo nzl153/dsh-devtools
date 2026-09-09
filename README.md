@@ -14,15 +14,15 @@ DSH 开发者工具插件集。10 个包共用一套构建与检查流程。
 | `dsh-debrief` | 0.10.0 | DSH Mission Debrief |
 | `dsh-dev-loop` | 0.10.0 | DSH Dev Loop |
 | `dsh-developer-toolkit` | 0.1.0 | DSH Developer Toolkit |
-| `@dsh-external/dsh-mode-boost` | 0.2.0 | 模式提升插件 |
+| `dsh-mode-boost` | 0.2.0 | 模式提升插件 |
 | `dsh-output-gallery` | 0.10.0 | DSH Session 产物中心 / Deliverables Gallery |
 | `dsh-run-lab` | 0.9.0 | DSH Agent experiment & A/B comparison |
 | `dsh-session-archaeologist` | 1.0.0-rc.2 | Session Archaeologist |
-| `@dsh-external/dsh-time-machine` | 1.0.0-rc.2 | DSH Agent 文件修改时间机器 |
+| `dsh-devtools-time-machine` | 1.0.0-rc.2 | DSH Agent 文件修改时间机器 |
 | `dsh-toolkit-ui` | 0.2.0 | DSH Developer Toolkit UI shell and shared primitives |
 
-两个包的 npm 名字带 `@dsh-external` scope（`dsh-mode-boost`、`dsh-time-machine`）：
-`dsh-time-machine` 这个名字在 npm 上已被他人占用，故改用 scope。**插件 id 不变**，
+`dsh-devtools-time-machine` 这个 npm 名字不等于它的插件 id：`dsh-time-machine` 在 npm 上已被
+他人占用（zjukop 于 2026-08-15 发布），故包名加 `dsh-devtools-` 前缀。**插件 id 不变**，
 目录名、`cordis.patch.yml`、API 路由、locale 命名空间仍是 `dsh-time-machine`。
 
 `dsh-tool-router` 已拆出去单独维护：<https://github.com/nzl153/dsh-tool-router>

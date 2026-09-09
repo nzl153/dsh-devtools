@@ -43,7 +43,7 @@
     "./package.json": "./package.json"
   },
   "bin": {
-    "dsh-run-lab": "./lib/cli.js"
+    "dsh-run-lab": "lib/cli.js"
   },
   "files": [
     "lib",

@@ -3,11 +3,10 @@
 ## [1.0.0-rc.2] - Unreleased
 
 ### 重命名
-- npm 包名改为 `@dsh-external/dsh-time-machine`：`dsh-time-machine` 在 npm 上已被他人占用
+- npm 包名改为 `dsh-devtools-time-machine`：`dsh-time-machine` 在 npm 上已被他人占用
   （zjukop 于 2026-08-15 发布的同名包），原名发不出去。
 - 插件 id、目录名、`cordis.patch.yml`、HTTP 路由 `/plugins/dsh-time-machine/api`、
   client bundle id、locale 命名空间全部保持 `dsh-time-machine`，运行时行为不变。
-- 新增 `publishConfig.access = "public"`：scoped 包首次发布默认 restricted，不显式声明会发成私有包。
 
 ### 破坏性变更：适配 DeepSeek Harness 0.1.2-rc.1
 - `@deepseek-ai/dsh-client-runtime` 在 0.1.2 停止发布（末版 0.1.1-rc.2）。client 上下文类型改为
