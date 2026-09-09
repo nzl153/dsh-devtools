@@ -34,9 +34,17 @@ dsh-time-machine answers:
 
 Prerequisite: DSH CLI (`@deepseek-ai/dsh`) installed and a target profile (example: `web`).
 
+The npm package name is `@dsh-external/dsh-time-machine` (the plugin id stays `dsh-time-machine`):
+
+```sh
+dsh plugin --profile web add @dsh-external/dsh-time-machine
+```
+
+From source:
+
 ```sh
 git clone https://github.com/nzl153/dsh-devtools.git
-cd dsh-time-machine
+cd dsh-devtools/packages/dsh-time-machine
 pnpm install
 pnpm build
 dsh plugin --profile web add link:"$(cygpath -m "$PWD")"

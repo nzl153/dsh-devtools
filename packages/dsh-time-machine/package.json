@@ -1,5 +1,5 @@
 {
-  "name": "dsh-time-machine",
+  "name": "@dsh-external/dsh-time-machine",
   "version": "1.0.0-rc.2",
   "description": "DSH Agent 文件修改时间机器：session baseline、turn 级修改记录、安全恢复与 conflict 检测",
   "homepage": "https://github.com/nzl153/dsh-devtools/tree/main/packages/dsh-time-machine",
@@ -24,6 +24,9 @@
     "versioning"
   ],
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "type": "module",
   "main": "lib/index.js",
   "exports": {

@@ -14,3 +14,4 @@
 
 ### 打包
 - `files` 增加 `CHANGELOG.md`。
+- 新增 `publishConfig.access = "public"`：scoped 包首次发布默认 restricted，不显式声明会发成私有包。

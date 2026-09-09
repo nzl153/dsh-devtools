@@ -10,16 +10,20 @@ DSH 开发者工具插件集。10 个包共用一套构建与检查流程。
 
 | 包 | 版本 | 说明 |
 |---|---|---|
-| `dsh-context-xray` | 1.0.0-rc.1 | DSH Context X-Ray / Context Inspector |
-| `dsh-debrief` | 0.9.0 | DSH Mission Debrief |
-| `dsh-dev-loop` | 0.9.0 | DSH Dev Loop |
+| `dsh-context-xray` | 1.0.0-rc.2 | DSH Context X-Ray / Context Inspector |
+| `dsh-debrief` | 0.10.0 | DSH Mission Debrief |
+| `dsh-dev-loop` | 0.10.0 | DSH Dev Loop |
 | `dsh-developer-toolkit` | 0.1.0 | DSH Developer Toolkit |
-| `dsh-mode-boost` | 0.1.0 | 模式提升插件 |
-| `dsh-output-gallery` | 0.9.0 | DSH Session 产物中心 / Deliverables Gallery |
-| `dsh-run-lab` | 0.8.0 | DSH Agent experiment & A/B comparison |
-| `dsh-session-archaeologist` | 1.0.0-rc.1 | Session Archaeologist |
-| `dsh-time-machine` | 1.0.0-rc.1 | DSH Agent 文件修改时间机器 |
-| `dsh-toolkit-ui` | 0.1.0 | DSH Developer Toolkit UI shell and shared pr… |
+| `@dsh-external/dsh-mode-boost` | 0.2.0 | 模式提升插件 |
+| `dsh-output-gallery` | 0.10.0 | DSH Session 产物中心 / Deliverables Gallery |
+| `dsh-run-lab` | 0.9.0 | DSH Agent experiment & A/B comparison |
+| `dsh-session-archaeologist` | 1.0.0-rc.2 | Session Archaeologist |
+| `@dsh-external/dsh-time-machine` | 1.0.0-rc.2 | DSH Agent 文件修改时间机器 |
+| `dsh-toolkit-ui` | 0.2.0 | DSH Developer Toolkit UI shell and shared primitives |
+
+两个包的 npm 名字带 `@dsh-external` scope（`dsh-mode-boost`、`dsh-time-machine`）：
+`dsh-time-machine` 这个名字在 npm 上已被他人占用，故改用 scope。**插件 id 不变**，
+目录名、`cordis.patch.yml`、API 路由、locale 命名空间仍是 `dsh-time-machine`。
 
 `dsh-tool-router` 已拆出去单独维护：<https://github.com/nzl153/dsh-tool-router>
 

@@ -21,6 +21,9 @@
     "CHANGELOG.md"
   ],
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "peerDependencies": {
     "cordis": ">=4.0.0-rc <5"
   },
