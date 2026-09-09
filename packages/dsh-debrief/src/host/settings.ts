@@ -6,11 +6,15 @@
  */
 import type { Context } from '@deepseek-ai/cordis'
 import z from '@deepseek-ai/schemastery'
-import { settingsNamespace, type SettingsScope } from '@deepseek-ai/dsh-settings'
+import type { SettingsScope } from '@deepseek-ai/dsh-settings'
 import type { DebriefSettings } from '../core/types.ts'
 import { DEFAULT_CONFIG } from '../core/types.ts'
 
-export const DEBRIEF_NAMESPACE = settingsNamespace('debrief')
+/**
+ * 0.1.2 起 `settingsNamespace()` 助手被移除，命名空间改用普通字符串常量
+ * （官方插件同样写法，例如 dsh-agent-presets 的 `const SETTINGS_NAMESPACE = "agent-presets"`）。
+ */
+export const DEBRIEF_NAMESPACE = 'debrief'
 
 export const DebriefSettingsSchema: z<DebriefSettings> = z.object({
   triggerMode: z.union(['off', 'session-only', 'every-n-turns', 'on-completion'] as const).default(DEFAULT_CONFIG.triggerMode),

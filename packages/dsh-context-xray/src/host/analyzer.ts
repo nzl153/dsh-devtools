@@ -14,9 +14,14 @@ import { DEFAULT_PRESSURE_THRESHOLDS } from '../core/pressure/level.ts'
 import type { CategoryMetric, ContextSnapshot, PressureThresholds, SessionHistory, TurnPoint } from '../core/types.ts'
 import type { HistoryStore } from './store.ts'
 
+/**
+ * 只声明实际用到的部分。
+ * 0.1.2 起 `Session.events` 数组被删除，改成方法 `snapshotEvents()` 返回事件日志快照，
+ * 所以这里按方法声明，而不是按属性。
+ */
 type AnySession = {
   readonly id: string
-  readonly events: readonly any[]
+  snapshotEvents: () => readonly any[]
 }
 
 type AnyAgent = {
@@ -156,7 +161,7 @@ export class ContextAnalyzer {
 
   private collectMessages(session: AnySession): CoreMessage[] {
     const out: CoreMessage[] = []
-    for (const event of session.events ?? []) {
+    for (const event of session.snapshotEvents() ?? []) {
       const message = deriveEventMessage(event)
       if (!message) continue
       const content = Array.isArray((message as { content?: unknown }).content)
@@ -184,7 +189,7 @@ export class ContextAnalyzer {
 
   private latestTurn(session: AnySession): number {
     let turn = 0
-    for (const event of session.events ?? []) {
+    for (const event of session.snapshotEvents() ?? []) {
       if (event.type === 'turn/start') turn = event.data?.turn ?? turn
     }
     return turn
@@ -192,7 +197,7 @@ export class ContextAnalyzer {
 
   private extractToolCalls(session: AnySession): Array<{ turn?: number; name: string; time?: number }> {
     const calls: Array<{ turn?: number; name: string; time?: number }> = []
-    for (const event of session.events ?? []) {
+    for (const event of session.snapshotEvents() ?? []) {
       if (event.type !== 'assistant/message') continue
       const content = event.data?.message?.content ?? []
       for (const block of content as Array<{ type?: string; name?: string }>) {

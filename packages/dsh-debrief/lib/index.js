@@ -1,5 +1,4 @@
 import z from "@deepseek-ai/schemastery";
-import { settingsNamespace } from "@deepseek-ai/dsh-settings";
 //#region src/core/types.ts
 const DEFAULT_CONFIG = {
 	triggerMode: "session-only",
@@ -50,7 +49,11 @@ const DEFAULT_CONFIG = {
 };
 //#endregion
 //#region src/host/settings.ts
-const DEBRIEF_NAMESPACE = settingsNamespace("debrief");
+/**
+* 0.1.2 起 `settingsNamespace()` 助手被移除，命名空间改用普通字符串常量
+* （官方插件同样写法，例如 dsh-agent-presets 的 `const SETTINGS_NAMESPACE = "agent-presets"`）。
+*/
+const DEBRIEF_NAMESPACE = "debrief";
 const DebriefSettingsSchema = z.object({
 	triggerMode: z.union([
 		"off",

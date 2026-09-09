@@ -1536,7 +1536,7 @@ var GalleryRuntime = class {
 			workspace
 		});
 		result.session.workspace = workspace;
-		const sessionWithRelations = applyRelatedCommands(result.session, session.events ?? []);
+		const sessionWithRelations = applyRelatedCommands(result.session, session.snapshotEvents?.() ?? []);
 		await this.store.write(sessionWithRelations);
 		return {
 			sessionId,
@@ -1872,20 +1872,15 @@ function apply(ctx, config) {
 	runtimePromise.then((runtime) => registerApi(ctx, runtime));
 	ctx.effect(() => {
 		const consumed = /* @__PURE__ */ new Map();
-		const onSessionEvent = (session) => {
-			if (!session || session.id === void 0) return;
-			const events = session.events ?? [];
-			const last = events[events.length - 1];
-			if (!last) return;
+		ctx.on("session/event", (session, event) => {
 			const seen = consumed.get(session.id) ?? 0;
-			if (last.seq < seen) return;
-			consumed.set(session.id, last.seq);
-			if (last.type !== "turn/end") return;
-			runtimePromise.then((runtime) => runtime.refresh(session.id, latestTurn(events))).catch((error) => {
+			if (event.seq < seen) return;
+			consumed.set(session.id, event.seq);
+			if (event.type !== "turn/end") return;
+			runtimePromise.then((runtime) => runtime.refresh(session.id, event.data.turn)).catch((error) => {
 				ctx.logger.warn(`[dsh-output-gallery] turn scan failed: ${error instanceof Error ? error.message : String(error)}`);
 			});
-		};
-		ctx.on("session/event", onSessionEvent);
+		});
 		return () => {
 			consumed.clear();
 		};
@@ -1895,11 +1890,6 @@ function apply(ctx, config) {
 			storePromise.then((store) => store.clear());
 		};
 	}, "dsh-output-gallery: cleanup (async registered)");
-}
-function latestTurn(events) {
-	let turn = 0;
-	for (const event of events) if (event.type === "turn/start") turn = event.data?.turn ?? turn;
-	return turn;
 }
 //#endregion
 export { Config, GalleryRuntime, apply, buildPreview, createGalleryStore, galleryDir, inject, name, resolveWorkspacePath, runStandaloneIndex, scanWorkspace };

@@ -563,7 +563,7 @@ var ContextAnalyzer = class {
 	}
 	collectMessages(session) {
 		const out = [];
-		for (const event of session.events ?? []) {
+		for (const event of session.snapshotEvents() ?? []) {
 			const message = deriveEventMessage(event);
 			if (!message) continue;
 			const content = Array.isArray(message.content) ? message.content : [];
@@ -580,12 +580,12 @@ var ContextAnalyzer = class {
 	}
 	latestTurn(session) {
 		let turn = 0;
-		for (const event of session.events ?? []) if (event.type === "turn/start") turn = event.data?.turn ?? turn;
+		for (const event of session.snapshotEvents() ?? []) if (event.type === "turn/start") turn = event.data?.turn ?? turn;
 		return turn;
 	}
 	extractToolCalls(session) {
 		const calls = [];
-		for (const event of session.events ?? []) {
+		for (const event of session.snapshotEvents() ?? []) {
 			if (event.type !== "assistant/message") continue;
 			const content = event.data?.message?.content ?? [];
 			for (const block of content) if (block?.type === "tool-call" && block.name) calls.push({
@@ -731,20 +731,15 @@ function apply(ctx, config = {}) {
 	}));
 	ctx.effect(() => {
 		const consumed = /* @__PURE__ */ new Map();
-		const onSessionEvent = (session) => {
-			if (!session || session.id === void 0) return;
-			const events = session.events ?? [];
-			const last = events[events.length - 1];
-			if (!last) return;
+		ctx.on("session/event", (session, event) => {
 			const seen = consumed.get(session.id) ?? 0;
-			if (last.seq < seen) return;
-			consumed.set(session.id, last.seq);
-			if (last.type !== "turn/end") return;
+			if (event.seq < seen) return;
+			consumed.set(session.id, event.seq);
+			if (event.type !== "turn/end") return;
 			analyzerPromise.then((analyzer) => analyzer.recordTurnEnd(session.id)).catch((error) => {
 				ctx.logger.warn(`[dsh-context-xray] turn history record failed: ${error instanceof Error ? error.message : String(error)}`);
 			});
-		};
-		ctx.on("session/event", onSessionEvent);
+		});
 		return () => {
 			consumed.clear();
 		};

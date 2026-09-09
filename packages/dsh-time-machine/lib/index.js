@@ -1570,14 +1570,17 @@ var HostAdapter = class {
 			if (next) await this.runPost(next);
 		}
 	}
-	/** On `session/event`: track turn boundaries. */
-	onSessionEvent(session) {
-		if (!session || session.id === void 0) return;
-		const events = session.events ?? [];
-		for (const ev of events) if (ev.type === "turn/start") {
-			const turn = ev.data?.turn;
+	/**
+	* On `session/event`: track turn boundaries.
+	* 0.1.2 起回调直接给出这一条事件（Session.events 数组已删除），
+	* 因此不再每次回扫整段日志，改为只处理当前事件；语义等价且不会重复回放历史。
+	*/
+	onSessionEvent(session, event) {
+		if (!session || session.id === void 0 || !event) return;
+		if (event.type === "turn/start") {
+			const turn = event.data?.turn;
 			if (typeof turn === "number") this.turns.set(session.id, turn);
-		} else if (ev.type === "turn/end") this.finishTurn(session.id);
+		} else if (event.type === "turn/end") this.finishTurn(session.id);
 	}
 	async finishTurn(sessionId) {
 		await (await this.getEngine()).endTurn(sessionId).catch(() => void 0);
@@ -1827,8 +1830,8 @@ function apply(ctx) {
 		adapter.onPost(exec);
 		return next();
 	});
-	const stopSession = ctx.on("session/event", (session) => {
-		adapter.onSessionEvent(session);
+	const stopSession = ctx.on("session/event", (session, event) => {
+		adapter.onSessionEvent(session, event);
 	});
 	ctx.effect(() => {
 		return () => {

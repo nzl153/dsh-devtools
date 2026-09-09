@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.10.0] - Unreleased
+
+### 破坏性变更：适配 DeepSeek Harness 0.1.2-rc.1
+- `@deepseek-ai/dsh-client-runtime` 在 0.1.2 停止发布（末版 0.1.1-rc.2）。client 上下文类型改为
+  `import type { Context as ClientContext } from '@deepseek-ai/cordis'`。
+- `dsh.client.inject` 移除 `@deepseek-ai/dsh-client-runtime`，避免客户端加载器等待一个不存在的插件。
+- 开发依赖 `@deepseek-ai/dsh-*` 由 `0.1.0-rc.6` 升到 `0.1.2-rc.1`，`@deepseek-ai/cordis` 升到 `^4.0.2`。
+- 客户端类型增强改为显式 import 提供方：`dsh-client-ui-renderer/client` 提供 `Context.slots`。
+- Host 侧 `Session.events` 数组被删除，改为 `Session.snapshotEvents()`（runtime 里读取事件日志处）。
+- `ctx.on('session/event')` 回调签名由 `(session)` 变为 `(session, event)`；turn 边界改为直接消费回调里的
+  那一条事件，`turn/end` 自带 turn 号，不再回读整段日志。
+
+### 未改动（澄清）
+- `@deepseek-ai/dsh-client-ui-primitives` / `dsh-client-ui-slots` 在 0.1.2 仍在发布并由前端 shell
+  提供，本包对它们的 import 保持不变。
+
 ## [0.9.0] - Unreleased
 
 ### 新增

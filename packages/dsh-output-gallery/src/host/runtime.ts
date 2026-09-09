@@ -19,7 +19,8 @@ type AnySession = {
   header?: { cwd?: string }
   cwd?: string
   workspace?: string
-  events?: readonly EventLike[]
+  /** 0.1.2 起 `Session.events` 数组被删除，改为方法 `snapshotEvents()`。 */
+  snapshotEvents?: () => readonly EventLike[]
 }
 
 export class GalleryRuntime {
@@ -55,7 +56,7 @@ export class GalleryRuntime {
     // Preserve the workspace from the session, not just the old store.
     result.session.workspace = workspace
     // Attach the latest related command from this session's live event log.
-    const sessionWithRelations = applyRelatedCommands(result.session, session.events ?? [])
+    const sessionWithRelations = applyRelatedCommands(result.session, session.snapshotEvents?.() ?? [])
     await this.store.write(sessionWithRelations)
     return {
       sessionId,

@@ -8,12 +8,15 @@
  *  - A Toolkit entry for the unified Developer Toolkit navigation.
  */
 import { useEffect, useState } from 'react'
-import type { ClientContext } from '@deepseek-ai/dsh-client-runtime/client'
+import type { Context as ClientContext } from '@deepseek-ai/cordis'
 import type { PropsLocale, PropsRuntime } from '@deepseek-ai/dsh-client-ui-slots'
 import { IconListPenOutline16 } from '@deepseek-ai/dsh-client-ui-primitives'
 import type {} from '@deepseek-ai/dsh-client-ui-conversation/client'
-import type { TurnTailOwnerProps } from '@deepseek-ai/dsh-client-ui-conversation/client'
+// 0.1.2 起 `conversation.chat.turnTail` 槽位与 `TurnTailOwnerProps` 由 ui-chat 声明（不再在 ui-conversation）。
+import type {} from '@deepseek-ai/dsh-client-ui-chat/client'
+import type { TurnTailOwnerProps } from '@deepseek-ai/dsh-client-ui-chat/client'
 import type {} from '@deepseek-ai/dsh-client-locale/client'
+import type {} from '@deepseek-ai/dsh-client-ui-renderer/client'
 import {
   openToolkitPanel,
   registerToolkitEntry,

@@ -218,19 +218,18 @@ export class HostAdapter {
     }
   }
 
-  /** On `session/event`: track turn boundaries. */
-  onSessionEvent(session: { id: string; events: readonly { seq: number; type: string }[] }): void {
-    if (!session || session.id === undefined) return
-    const events = session.events ?? []
-    for (const ev of events) {
-      if (ev.type === 'turn/start') {
-        // Get the turn number from the event data when available.
-        const data = (ev as { data?: { turn?: number } }).data
-        const turn = data?.turn
-        if (typeof turn === 'number') this.turns.set(session.id, turn)
-      } else if (ev.type === 'turn/end') {
-        void this.finishTurn(session.id)
-      }
+  /**
+   * On `session/event`: track turn boundaries.
+   * 0.1.2 起回调直接给出这一条事件（Session.events 数组已删除），
+   * 因此不再每次回扫整段日志，改为只处理当前事件；语义等价且不会重复回放历史。
+   */
+  onSessionEvent(session: { id: string }, event: { type: string; data?: unknown }): void {
+    if (!session || session.id === undefined || !event) return
+    if (event.type === 'turn/start') {
+      const turn = (event.data as { turn?: number } | undefined)?.turn
+      if (typeof turn === 'number') this.turns.set(session.id, turn)
+    } else if (event.type === 'turn/end') {
+      void this.finishTurn(session.id)
     }
   }
 

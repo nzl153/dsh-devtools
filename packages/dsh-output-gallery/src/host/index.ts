@@ -50,20 +50,17 @@ export function apply(ctx: Context, config?: Partial<Config>): void {
 
   ctx.effect(() => {
     const consumed = new Map<string, number>()
-    const onSessionEvent = (session: { id: string; events: readonly { seq: number; type: string }[] }): void => {
-      if (!session || session.id === undefined) return
-      const events = session.events ?? []
-      const last = events[events.length - 1]
-      if (!last) return
+    // 0.1.2 起 `session/event` 回调签名变为 (session, event)，Session.events 数组被删除，
+    // 所以直接消费回调里的这一条事件；turn/end 自带 turn 号，不必再回读整段日志。
+    ctx.on('session/event', (session, event) => {
       const seen = consumed.get(session.id) ?? 0
-      if (last.seq < seen) return
-      consumed.set(session.id, last.seq)
-      if (last.type !== 'turn/end') return
-      void runtimePromise.then((runtime) => runtime.refresh(session.id, latestTurn(events))).catch((error) => {
+      if (event.seq < seen) return
+      consumed.set(session.id, event.seq)
+      if (event.type !== 'turn/end') return
+      void runtimePromise.then((runtime) => runtime.refresh(session.id, event.data.turn)).catch((error) => {
         ctx.logger.warn(`[dsh-output-gallery] turn scan failed: ${error instanceof Error ? error.message : String(error)}`)
       })
-    }
-    ctx.on('session/event', onSessionEvent)
+    })
     return () => {
       consumed.clear()
     }
@@ -75,12 +72,4 @@ export function apply(ctx: Context, config?: Partial<Config>): void {
       void storePromise.then((store) => store.clear())
     }
   }, 'dsh-output-gallery: cleanup (async registered)')
-}
-
-function latestTurn(events: readonly { type: string; data?: { turn?: number } }[]): number {
-  let turn = 0
-  for (const event of events) {
-    if (event.type === 'turn/start') turn = event.data?.turn ?? turn
-  }
-  return turn
 }

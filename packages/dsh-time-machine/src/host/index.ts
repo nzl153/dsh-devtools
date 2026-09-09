@@ -38,8 +38,9 @@ export function apply(ctx: Context): void {
   })
 
   // Track turn boundaries so changes are attributed to the right turn.
-  const stopSession = ctx.on('session/event', (session: { id: string; events: readonly { seq: number; type: string }[] }) => {
-    adapter.onSessionEvent(session)
+  // 0.1.2 起 `session/event` 回调签名是 (session, event)。
+  const stopSession = ctx.on('session/event', (session, event) => {
+    adapter.onSessionEvent(session, event)
   })
 
   ctx.effect(() => {
