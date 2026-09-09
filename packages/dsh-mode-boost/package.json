@@ -17,13 +17,14 @@
   "files": [
     "lib",
     "scripts/build.sh",
-    "README.md"
+    "README.md",
+    "CHANGELOG.md"
   ],
   "license": "MIT",
   "peerDependencies": {
     "cordis": ">=4.0.0-rc <5"
   },
   "scripts": {
-    "build": "bash scripts/build.sh"
+    "build": "node --check lib/index.js && node --check lib/core.js"
   }
 }

@@ -77,4 +77,5 @@ export function adoptStyles(): void {
   border-radius: 6px; font: inherit;
 }
 `
+  document.head.append(style)
 }

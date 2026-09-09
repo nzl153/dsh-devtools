@@ -730,6 +730,7 @@ window.__ModuleLoader__.load({
   border-radius: 6px; font: inherit;
 }
 `;
+			document.head.append(style);
 		}
 		//#endregion
 		//#region src/client/index.tsx

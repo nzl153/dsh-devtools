@@ -19,6 +19,9 @@
 - `@deepseek-ai/dsh-client-ui-primitives` 与 `@deepseek-ai/dsh-client-ui-slots` 在 0.1.2 **没有**被删除：
   两者仍有 `0.1.2-rc.1` 发布，Web 端由前端 shell 以静态模块提供，本包对它们的 import 一律保持原样。
 
+### 打包
+- `files` 增加 `CHANGELOG.md`：此前它不在清单里，不会进 tarball。
+
 ## [1.0.0-rc.1] - Unreleased
 
 ### 新增

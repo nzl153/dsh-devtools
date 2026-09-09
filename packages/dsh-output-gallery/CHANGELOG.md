@@ -16,6 +16,10 @@
 - `@deepseek-ai/dsh-client-ui-primitives` / `dsh-client-ui-slots` 在 0.1.2 仍在发布并由前端 shell
   提供，本包对它们的 import 保持不变。
 
+### 打包
+- `files` 去掉 `src/core`：消费者通过 `exports` 的 `./core` 拿到的是构建产物 `lib/core.js`，TypeScript 源码不需要随包发布（少 8 个文件约 43 kB）。
+- `files` 增加 `CHANGELOG.md`。
+
 ## [0.9.0] - Unreleased
 
 ### 新增

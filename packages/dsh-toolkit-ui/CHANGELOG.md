@@ -21,6 +21,9 @@
   0.1.2 自身的插件也照旧 `require('@deepseek-ai/dsh-client-ui-primitives')`。
   因此本包对这两个包的 import 一律保持原样，没有改写。
 
+### 打包
+- `files` 增加 `CHANGELOG.md`：此前它不在清单里，不会进 tarball。
+
 ## [0.1.0] - Unreleased
 
 ### 新增

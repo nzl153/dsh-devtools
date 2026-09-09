@@ -15,6 +15,13 @@
 - `@deepseek-ai/dsh-client-ui-primitives` / `dsh-client-ui-slots` 在 0.1.2 仍在发布并由前端 shell
   提供，本包对它们的 import 保持不变。
 
+### 修复
+- `adoptStyles()` 创建了 `<style id="dsh-dev-loop-styles">` 并写入了 CSS，却从未插入文档，面板样式一直没生效。补上 `document.head.append(style)`。
+  （真机验证时发现的既有问题，与 0.1.2 迁移无关。）
+
+### 打包
+- `files` 增加 `CHANGELOG.md`。
+
 ## [0.9.0] - Unreleased
 
 ### 新增

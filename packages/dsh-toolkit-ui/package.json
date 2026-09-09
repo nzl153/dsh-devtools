@@ -18,7 +18,8 @@
   "files": [
     "lib",
     "types",
-    "cordis.patch.yml"
+    "cordis.patch.yml",
+    "CHANGELOG.md"
   ],
   "dsh": {
     "bundle": {

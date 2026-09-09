@@ -13,6 +13,9 @@
 - `@deepseek-ai/dsh-client-ui-primitives` / `dsh-client-ui-slots` 在 0.1.2 仍在发布并由前端 shell
   提供，本包对它们的 import 保持不变。
 
+### 打包
+- `files` 增加 `CHANGELOG.md`：此前它不在清单里，不会进 tarball。
+
 ## [0.8.0] - Unreleased
 
 ### 新增
