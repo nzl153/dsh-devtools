@@ -51,9 +51,18 @@ DSH rc.6 自带的 `@deepseek-ai/dsh-client-ui-deliverables` 做的是单 turn �
 
 前置条件：已安装 DSH CLI（`@deepseek-ai/dsh`），且本机已有目标 profile（示例为 `web`）。
 
+从 npm 安装（面板挂在共用外壳 `dsh-toolkit-ui` 上，两个都要装）：
+
+```sh
+dsh plugin --profile web add dsh-toolkit-ui
+dsh plugin --profile web add dsh-output-gallery
+```
+
+从源码装：
+
 ```sh
 git clone https://github.com/nzl153/dsh-devtools.git
-cd dsh-output-gallery
+cd dsh-devtools/packages/dsh-output-gallery
 pnpm install
 pnpm build
 dsh plugin --profile web add link:"$(cygpath -m "$PWD")"

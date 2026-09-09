@@ -38,9 +38,18 @@ Use it for context bloat, redundant tools, and pressure warnings.
 
 Prerequisite: DSH CLI (`@deepseek-ai/dsh`) installed and a target profile (example: `web`).
 
+From npm (the panel lives in the shared shell `dsh-toolkit-ui`, install both):
+
+```sh
+dsh plugin --profile web add dsh-toolkit-ui
+dsh plugin --profile web add dsh-context-xray
+```
+
+From source:
+
 ```sh
 git clone https://github.com/nzl153/dsh-devtools.git
-cd dsh-context-xray
+cd dsh-devtools/packages/dsh-context-xray
 pnpm install
 pnpm build
 dsh plugin --profile web add link:"$(cygpath -m "$PWD")"

@@ -34,9 +34,10 @@ dsh-time-machine answers:
 
 Prerequisite: DSH CLI (`@deepseek-ai/dsh`) installed and a target profile (example: `web`).
 
-The npm package name is `dsh-devtools-time-machine` (the plugin id stays `dsh-time-machine`):
+The npm package name is `dsh-devtools-time-machine` (the plugin id stays `dsh-time-machine`); the panel lives in the shared shell `dsh-toolkit-ui`, install both:
 
 ```sh
+dsh plugin --profile web add dsh-toolkit-ui
 dsh plugin --profile web add dsh-devtools-time-machine
 ```
 

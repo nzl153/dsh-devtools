@@ -27,17 +27,22 @@
 
 文本与探针**单一事实源**：`lib/core.js` 同时被插件与 `probe/run-mode-boost-eval.mjs` 引用。
 
-## 安装（官方插件形态，三选一）
+## 安装
+
+从 npm 安装：
+
+```sh
+dsh plugin --profile web add dsh-mode-boost
+```
+
+其他方式：
 
 ```powershell
 # 运行时热装（免重启；推荐开发态）
 dev_install_package D:\dsh\dsh-routing-suite\mode-boost
 
-# 官方装配（重启后由 bundles 接管）
+# 从解压目录或 tgz 装配
 dsh plugin --profile web add <解压目录或 tgz>
-
-# 或直接装配仓库
-dsh plugin --profile web add github:.../dsh-mode-boost
 ```
 
 新会话选择官方 Standard preset 即生效（宿主平面 → 所有 preset 的会话受益）。

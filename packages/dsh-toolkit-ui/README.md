@@ -28,9 +28,17 @@ dsh-toolkit-ui 解决：
 
 前置条件：已安装 DSH CLI（`@deepseek-ai/dsh`），且本机已有目标 profile（示例为 `web`）。
 
+从 npm 安装：
+
+```sh
+dsh plugin --profile web add dsh-toolkit-ui
+```
+
+从源码装：
+
 ```sh
 git clone https://github.com/nzl153/dsh-devtools.git
-cd dsh-toolkit-ui
+cd dsh-devtools/packages/dsh-toolkit-ui
 pnpm install
 pnpm build
 dsh plugin --profile web add link:"$(cygpath -m "$PWD")"

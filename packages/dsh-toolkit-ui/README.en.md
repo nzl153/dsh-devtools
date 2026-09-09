@@ -28,9 +28,17 @@ dsh-toolkit-ui solves this:
 
 Prerequisite: DSH CLI (`@deepseek-ai/dsh`) installed and a target profile (example: `web`).
 
+From npm:
+
+```sh
+dsh plugin --profile web add dsh-toolkit-ui
+```
+
+From source:
+
 ```sh
 git clone https://github.com/nzl153/dsh-devtools.git
-cd dsh-toolkit-ui
+cd dsh-devtools/packages/dsh-toolkit-ui
 pnpm install
 pnpm build
 dsh plugin --profile web add link:"$(cygpath -m "$PWD")"

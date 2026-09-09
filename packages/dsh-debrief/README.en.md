@@ -32,9 +32,18 @@ dsh-debrief solves this:
 
 Prerequisite: DSH CLI (`@deepseek-ai/dsh`) installed and a target profile (example: `web`).
 
+From npm (the panel lives in the shared shell `dsh-toolkit-ui`, install both):
+
+```sh
+dsh plugin --profile web add dsh-toolkit-ui
+dsh plugin --profile web add dsh-debrief
+```
+
+From source:
+
 ```sh
 git clone https://github.com/nzl153/dsh-devtools.git
-cd dsh-debrief
+cd dsh-devtools/packages/dsh-debrief
 pnpm install
 pnpm build
 dsh plugin --profile web add link:"$(cygpath -m "$PWD")"

@@ -37,9 +37,18 @@ dsh-session-archaeologist solves this:
 
 Prerequisite: DSH CLI (`@deepseek-ai/dsh`) installed and a target profile (example: `web`).
 
+From npm (the panel lives in the shared shell `dsh-toolkit-ui`, install both):
+
+```sh
+dsh plugin --profile web add dsh-toolkit-ui
+dsh plugin --profile web add dsh-session-archaeologist
+```
+
+From source:
+
 ```sh
 git clone https://github.com/nzl153/dsh-devtools.git
-cd dsh-session-archaeologist
+cd dsh-devtools/packages/dsh-session-archaeologist
 pnpm install
 pnpm build
 dsh plugin --profile web add link:"$(cygpath -m "$PWD")"

@@ -34,9 +34,10 @@ dsh-time-machine 解决的问题：
 
 前置条件：已安装 DSH CLI（`@deepseek-ai/dsh`），且本机已有目标 profile（示例为 `web`）。
 
-npm 包名是 `dsh-devtools-time-machine`（插件 id 仍是 `dsh-time-machine`）：
+npm 包名是 `dsh-devtools-time-machine`（插件 id 仍是 `dsh-time-machine`），面板挂在共用外壳 `dsh-toolkit-ui` 上，两个都要装：
 
 ```sh
+dsh plugin --profile web add dsh-toolkit-ui
 dsh plugin --profile web add dsh-devtools-time-machine
 ```
 
